@@ -13,23 +13,19 @@
             height: 100vh;
             margin: 0;
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            text-align: center;
-            flex-direction: column; /* Make content stack vertically */
+            text-align: center; /* Center content horizontally */
         }
         .content {
-            text-align: center;
+            text-align: center; /* Center content within the div */
         }
         .content img {
-            width: 80%; /* Use a percentage for responsive sizing */
-            max-width: 150px; /* Maximum width to keep it small on larger screens */
+            max-width: 150px; /* Image size adjusted to be twice smaller */
             height: auto;
-            cursor: pointer;
+            cursor: pointer; /* Change cursor to pointer on hover */
         }
         .content p {
-            font-size: 4vw; /* Relative sizing to adjust on different screen sizes */
-            max-width: 90%; /* Prevent text from being too wide on large screens */
-            color: #8B0000;
-            margin: 10px;
+            font-size: 28px; /* Text size increased a bit */
+            color: #8B0000; /* Dark wine color */
         }
     </style>
 </head>
@@ -42,7 +38,7 @@
         function changeImage() {
             var image = document.getElementById('dinoImage');
             if (image.src.match("dino.png.webp")) {
-                image.src = "sign.png";
+                image.src = "sign.png.png";
             } else {
                 image.src = "dino.png.webp";
             }
