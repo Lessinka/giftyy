@@ -21,6 +21,7 @@
         .content img {
             max-width: 150px; /* Image size adjusted to be twice smaller */
             height: auto;
+            cursor: pointer; /* Change cursor to pointer on hover */
         }
         .content p {
             font-size: 28px; /* Text size increased a bit */
@@ -30,8 +31,18 @@
 </head>
 <body>
     <div class="content">
-        <img src="dino.png.webp" alt="Dino with sign">
+        <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <p>Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
+    <script>
+        function changeImage() {
+            var image = document.getElementById('dinoImage');
+            if (image.src.match("dino.png.webp")) {
+                image.src = "sign.png";
+            } else {
+                image.src = "dino.png.webp";
+            }
+        }
+    </script>
 </body>
 </html>
