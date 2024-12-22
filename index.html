@@ -1,1 +1,48 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>URPERFECT</title> <style> body { background-color: lightcoral; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; text-align: center; /* Center content horizontally */ } .content { text-align: center; /* Center content within the div */ } .content img { max-width: 150px; /* Image size adjusted to be twice smaller */ height: auto; cursor: pointer; /* Change cursor to pointer on hover */ } .content p { font-size: 28px; /* Text size increased a bit */ color: #8B0000; /* Dark wine color */ } </style> </head> <body> <div class="content"> <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()"> <p>Merry Christmas, I love you so much, thank you for being in my life.</p> </div> <script> function changeImage() { var image = document.getElementById('dinoImage'); if (image.src.match("dino.png.webp")) { image.src = "sign.png.png"; } else { image.src = "dino.png.webp"; } } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URPERFECT</title>
+    <style>
+        body {
+            background-color: lightcoral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center; /* Center content horizontally */
+        }
+        .content {
+            text-align: center; /* Center content within the div */
+        }
+        .content img {
+            max-width: 150px; /* Image size adjusted to be twice smaller */
+            height: auto;
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        .content p {
+            font-size: 28px; /* Text size increased a bit */
+            color: #8B0000; /* Dark wine color */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
+        <p>Merry Christmas, I love you so much, thank you for being in my life.</p>
+    </div>
+    <script>
+        function changeImage() {
+            var image = document.getElementById('dinoImage');
+            if (image.src.match("dino.png.webp")) {
+                image.src = "sign.png.png";
+            } else {
+                image.src = "dino.png.webp";
+            }
+        }
+    </script>
+</body>
+</html>
