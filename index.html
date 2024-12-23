@@ -26,12 +26,12 @@
             cursor: pointer; /* Change cursor to pointer on hover */
         }
         .extra-image {
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             max-width: 100px; /* Adjust size if needed */
             height: auto;
-            margin: 10px; /* Add some margin for better spacing */
+            margin: 0; /* Remove any margin for precise placement */
         }
         .full-message {
             display: none;
@@ -95,26 +95,4 @@
             var fullMessage = document.getElementById('fullMessage');
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
-            fullMessage.style.display = "block"; /* Show the full message */
-        }
-
-        function resetPage() {
-            var image = document.getElementById('dinoImage');
-            var extraImage = document.getElementById('extraImage');
-            var message = document.getElementById('message');
-            var fullMessage = document.getElementById('fullMessage');
-            var body = document.body;
-            extraImage.style.display = "block"; /* Show extra image */
-            body.style.backgroundColor = "lightcoral"; /* Revert to original color */
-            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
-            message.style.color = "#8B0000"; /* Revert text color to original */
-            fullMessage.style.display = "none"; /* Hide the full message */
-            image.style.display = "block"; /* Show the original image */
-            message.style.display = "block"; /* Show the original message */
-        }
-
-        // Show the extra image initially
-        document.getElementById('extraImage').style.display = "block";
-    </script>
-</body>
-</html>
+            fullMessage.style.display = "block"; /* Show the full message
