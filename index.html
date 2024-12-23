@@ -40,8 +40,9 @@
 <body>
     <div class="content">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
-        <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" style="display: none;">
+        <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
+        <img id="sharkImage" src="sharky1.png" alt="Shark image" style="display: none;">
     </div>
     <script>
         function changeImage() {
@@ -68,7 +69,17 @@
                 body.style.backgroundColor = "lightcoral"; /* Revert to original color */
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000"; /* Revert text color to original */
+                document.getElementById('sharkImage').style.display = "none"; /* Hide shark image */
             }
+        }
+
+        function showSharkImage() {
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            image.style.display = "none"; /* Hide the original image */
+            message.style.display = "none"; /* Hide the original message */
+            sharkImage.style.display = "block"; /* Show the shark image */
         }
 
         // Show the extra image initially
