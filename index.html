@@ -18,7 +18,6 @@
         }
         .content {
             text-align: center; /* Center content within the div */
-            position: relative; /* Make sure the parent element is relative */
         }
         .content img {
             max-width: 150px; /* Image size adjusted to be twice smaller */
@@ -26,9 +25,9 @@
             cursor: pointer; /* Change cursor to pointer on hover */
         }
         .extra-image {
-            position: fixed; /* Fixed position to ensure it's in the right corner */
-            top: 10;
-            right: 20;
+            position: absolute;
+            top: 0;
+            right: 0;
             max-width: 100px; /* Adjust size if needed */
             height: auto;
             margin: 10px; /* Add some margin for better spacing */
@@ -50,4 +49,31 @@
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
             var message = document.getElementById('message');
-            var body = document
+            var body = document.body;
+            if (image.src.match("dino.png.webp")) {
+                image.src = "sign.png.png";
+                extraImage.style.display = "none"; /* Hide extra image */
+                message.textContent = "Oh no ..."; /* Change text for second image */
+            } else if (image.src.match("sign.png.png")) {
+                image.src = "angry.gif";
+                body.style.backgroundColor = "#919191"; /* Change background color to grey */
+                message.textContent = "Dino is angry with you, stop touching.";
+                message.style.color = "#000000"; /* Change text color to black */
+            } else if (image.src.match("angry.gif")) {
+                image.src = "furious.png.png";
+                body.style.backgroundColor = "#380000"; /* Change background color to dark red */
+                message.textContent = "You made the dino furious, good job.";
+            } else {
+                image.src = "dino.png.webp";
+                extraImage.style.display = "block"; /* Show extra image */
+                body.style.backgroundColor = "lightcoral"; /* Revert to original color */
+                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
+                message.style.color = "#8B0000"; /* Revert text color to original */
+            }
+        }
+
+        // Show the extra image initially
+        document.getElementById('extraImage').style.display = "block";
+    </script>
+</body>
+</html>
