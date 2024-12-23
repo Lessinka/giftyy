@@ -14,6 +14,7 @@
             margin: 0;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center; /* Center content horizontally */
+            position: relative; /* Add to position the new image */
         }
         .content {
             text-align: center; /* Center content within the div */
@@ -22,6 +23,13 @@
             max-width: 150px; /* Image size adjusted to be twice smaller */
             height: auto;
             cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        .extra-image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            max-width: 100px; /* Adjust size if needed */
+            height: auto;
         }
         .content p {
             font-size: 28px; /* Text size increased a bit */
@@ -32,15 +40,18 @@
 <body>
     <div class="content">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
+        <img id="extraImage" class="extra-image" src="corner.png" alt="Extra image" style="display: none;">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <script>
         function changeImage() {
             var image = document.getElementById('dinoImage');
+            var extraImage = document.getElementById('extraImage');
             var message = document.getElementById('message');
             var body = document.body;
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
+                extraImage.style.display = "none"; /* Hide extra image */
                 message.textContent = "Oh no ..."; /* Change text for second image */
             } else if (image.src.match("sign.png.png")) {
                 image.src = "angry.gif";
@@ -53,11 +64,15 @@
                 message.textContent = "You made the dino furious, good job.";
             } else {
                 image.src = "dino.png.webp";
+                extraImage.style.display = "block"; /* Show extra image */
                 body.style.backgroundColor = "lightcoral"; /* Revert to original color */
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000"; /* Revert text color to original */
             }
         }
+
+        // Show the extra image initially
+        document.getElementById('extraImage').style.display = "block";
     </script>
 </body>
 </html>
