@@ -59,6 +59,7 @@
             var message = document.getElementById('message');
             var fullMessage = document.getElementById('fullMessage');
             var body = document.body;
+            console.log("Dino image clicked");
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
                 extraImage.style.display = "none"; /* Hide extra image */
@@ -86,6 +87,7 @@
             var image = document.getElementById('dinoImage');
             var message = document.getElementById('message');
             var fullMessage = document.getElementById('fullMessage');
+            console.log("Extra image clicked");
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
             fullMessage.style.display = "block"; /* Show the full message */
