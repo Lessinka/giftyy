@@ -14,7 +14,6 @@
             margin: 0;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center; /* Center content horizontally */
-            position: relative; /* Add to position the new image */
         }
         .content {
             text-align: center; /* Center content within the div */
@@ -26,7 +25,7 @@
             cursor: pointer; /* Change cursor to pointer on hover */
         }
         .extra-image {
-            position: absolute;
+            position: fixed; /* Fixed position to ensure it's in the right corner */
             top: 10px;
             right: 10px;
             max-width: 100px; /* Adjust size if needed */
