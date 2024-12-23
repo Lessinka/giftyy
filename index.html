@@ -36,21 +36,29 @@
         .full-message {
             display: none;
         }
+        .full-message img {
+            max-width: 150px;
+            height: auto;
+        }
         .content p {
             font-size: 28px; /* Text size increased a bit */
             color: #8B0000; /* Dark wine color */
+        }
+        .full-message p {
+            font-size: 28px;
+            color: #8B0000;
         }
     </style>
 </head>
 <body>
     <div class="content">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
-        <img id="extraImage" class="extra-image" src="rucorner.png" alt="Extra image" onclick="showMessage()">
+        <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showMessage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
-        <div id="fullMessage" class="full-message">
-            <img id="sharkImage" src="sharky1.png" alt="Sharky image">
-            <p>Hello, sharky just wanted to say that you are extremely gorgeous and he is extremely proud of the person you have become.</p>
-        </div>
+    </div>
+    <div id="fullMessage" class="full-message">
+        <img id="sharkImage" src="sharky1.png" alt="Sharky image">
+        <p>Hello, sharky just wanted to say that you are extremely gorgeous and he is extremely proud of the person you have become.</p>
     </div>
     <script>
         function changeImage() {
@@ -59,7 +67,6 @@
             var message = document.getElementById('message');
             var fullMessage = document.getElementById('fullMessage');
             var body = document.body;
-            console.log("Dino image clicked");
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
                 extraImage.style.display = "none"; /* Hide extra image */
@@ -80,6 +87,8 @@
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000"; /* Revert text color to original */
                 fullMessage.style.display = "none"; /* Hide the full message */
+                image.style.display = "block"; /* Show the original image */
+                message.style.display = "block"; /* Show the original message */
             }
         }
 
@@ -87,7 +96,6 @@
             var image = document.getElementById('dinoImage');
             var message = document.getElementById('message');
             var fullMessage = document.getElementById('fullMessage');
-            console.log("Extra image clicked");
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
             fullMessage.style.display = "block"; /* Show the full message */
