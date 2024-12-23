@@ -42,7 +42,7 @@
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
-        <img id="sharkImage" src="sharky1.png" alt="Shark image" style="display: none;">
+        <img id="sharkImage" src="sharky1.png" alt="Shark image" style="display: none;" onclick="resetPage()">
     </div>
     <script>
         function changeImage() {
@@ -80,6 +80,21 @@
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
             sharkImage.style.display = "block"; /* Show the shark image */
+        }
+
+        function resetPage() {
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var body = document.body;
+            image.style.display = "block"; /* Show the original image */
+            message.style.display = "block"; /* Show the original message */
+            sharkImage.style.display = "none"; /* Hide the shark image */
+            extraImage.style.display = "block"; /* Show the extra image */
+            body.style.backgroundColor = "lightcoral"; /* Revert to original color */
+            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
+            message.style.color = "#8B0000"; /* Revert text color to original */
         }
 
         // Show the extra image initially
