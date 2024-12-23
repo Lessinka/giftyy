@@ -26,7 +26,7 @@
             cursor: pointer; /* Change cursor to pointer on hover */
         }
         .extra-image {
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             max-width: 100px; /* Adjust size if needed */
@@ -39,14 +39,11 @@
         .full-message img {
             max-width: 150px;
             height: auto;
+            cursor: pointer; /* Make the shark image clickable */
         }
-        .content p {
+        .content p, .full-message p {
             font-size: 28px; /* Text size increased a bit */
             color: #8B0000; /* Dark wine color */
-        }
-        .full-message p {
-            font-size: 28px;
-            color: #8B0000;
         }
     </style>
 </head>
@@ -57,7 +54,7 @@
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div id="fullMessage" class="full-message">
-        <img id="sharkImage" src="sharky1.png" alt="Sharky image">
+        <img id="sharkImage" src="sharky1.png" alt="Sharky image" onclick="resetPage()">
         <p>Hello, sharky just wanted to say that you are extremely gorgeous and he is extremely proud of the person you have become.</p>
     </div>
     <script>
@@ -99,6 +96,21 @@
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
             fullMessage.style.display = "block"; /* Show the full message */
+        }
+
+        function resetPage() {
+            var image = document.getElementById('dinoImage');
+            var extraImage = document.getElementById('extraImage');
+            var message = document.getElementById('message');
+            var fullMessage = document.getElementById('fullMessage');
+            var body = document.body;
+            extraImage.style.display = "block"; /* Show extra image */
+            body.style.backgroundColor = "lightcoral"; /* Revert to original color */
+            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
+            message.style.color = "#8B0000"; /* Revert text color to original */
+            fullMessage.style.display = "none"; /* Hide the full message */
+            image.style.display = "block"; /* Show the original image */
+            message.style.display = "block"; /* Show the original message */
         }
 
         // Show the extra image initially
