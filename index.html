@@ -45,13 +45,13 @@
                 message.style.color = "#8B0000"; /* Maintain the text color */
             } else if (image.src.match("sign.png.png")) {
                 image.src = "angry.gif";
-                body.style.backroundColor = "grey"; /* Change background color to grey */
+                body.style.backroundColor = "#919191"; /* Change background color to grey */
                 message.textContent = "Dino is angry with you, stop touching."
             } else if (image.src.match("angry.gif")) {
                 image.src = "furious.png.png";
                 body.style.backgroundColor = "black"; /* Change background color to black */
                 message.textContent = "You made the dino furious, good job.";
-                message.style.color = "black"; /* Change text color to black */
+                message.style.color = "#000000"; /* Change text color to black */
             } else {
                 image.src = "dino.png.webp";
                 body.style.backgroundColor = "lightcoral"; /* Revert to original color */
