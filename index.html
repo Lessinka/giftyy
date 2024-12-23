@@ -47,9 +47,10 @@
                 image.src = "angry.gif";
                 body.style.backroundColor = "#919191"; /* Change background color to grey */
                 message.textContent = "Dino is angry with you, stop touching."
+                message.style.color = "#8B0000"; /* Maintain the text color */
             } else if (image.src.match("angry.gif")) {
                 image.src = "furious.png.png";
-                body.style.backgroundColor = "black"; /* Change background color to black */
+                body.style.backgroundColor = "#380000"; /* Change background color to dark red */
                 message.textContent = "You made the dino furious, good job.";
                 message.style.color = "#000000"; /* Change text color to black */
             } else {
