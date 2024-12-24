@@ -77,9 +77,12 @@
             var image = document.getElementById('dinoImage');
             var message = document.getElementById('message');
             var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage'); // Added to hide the extra image
+
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
             sharkImage.style.display = "block"; /* Show the shark image */
+            extraImage.style.display = "none"; /* Hide the extra image when shark appears */
         }
 
         // Show the extra image initially
