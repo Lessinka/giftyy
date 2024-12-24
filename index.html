@@ -51,6 +51,12 @@
             max-width: 150px;
             height: auto;
         }
+        #sharkyMessage4 {
+            font-size: 24px;
+            color: #800000;
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +73,7 @@
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
         <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
+        <p id="sharkyMessage4" class="sharky-message" style="display: none;">Sorry, I do not know what is going on...</p>
     </div>
     <script>
         function changeImage() {
@@ -103,6 +110,7 @@
                 document.getElementById('sharkImage3').style.display = "none";
                 document.getElementById('sharkyMessage3').style.display = "none";
                 document.getElementById('sharkImage4').style.display = "none";
+                document.getElementById('sharkyMessage4').style.display = "none";
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -154,10 +162,12 @@
             var sharkImage3 = document.getElementById('sharkImage3');
             var sharkImage4 = document.getElementById('sharkImage4');
             var sharkyMessage3 = document.getElementById('sharkyMessage3');
+            var sharkyMessage4 = document.getElementById('sharkyMessage4');
 
             sharkImage3.style.display = "none";
             sharkImage4.style.display = "block";
             sharkyMessage3.style.display = "none";
+            sharkyMessage4.style.display = "block";
         }
 
         document.getElementById('extraImage').style.display = "block";
