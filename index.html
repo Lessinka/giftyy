@@ -17,6 +17,11 @@
             position: relative; /* Add to position the new image */
         }
         .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height for centering */
             text-align: center; /* Center content within the div */
         }
         .content img {
@@ -31,10 +36,6 @@
             max-width: 100px; /* Adjust size if needed */
             height: auto;
         }
-        .content p {
-            font-size: 28px; /* Text size increased a bit */
-            color: #8B0000; /* Dark wine color */
-        }
         .sharky-message {
             font-size: 24px;
             color: #004080; /* Navy blue color for the sharky message */
@@ -45,24 +46,17 @@
             max-width: 150px;
             height: auto;
         }
-        .centered-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh; /* Ensure it takes up the full viewport height */
-        }
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
-        <div class="centered-container">
-            <img id="sharkImage" src="sharky1.png" alt="Shark image">
-            <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say that you are perfect and he is extremely proud of the person you have become.</p>
-        </div>
+    </div>
+    <div class="centered-container" id="sharkContent" style="display: none;">
+        <img id="sharkImage" src="sharky1.png" alt="Shark image">
+        <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say that you are perfect and he is extremely proud of the person you have become.</p>
     </div>
     <script>
         function changeImage() {
@@ -70,6 +64,9 @@
             var extraImage = document.getElementById('extraImage');
             var message = document.getElementById('message');
             var body = document.body;
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
                 extraImage.style.display = "none"; /* Hide extra image */
@@ -91,6 +88,8 @@
                 message.style.color = "#8B0000"; /* Revert text color to original */
                 document.getElementById('sharkImage').style.display = "none"; /* Hide shark image */
                 document.getElementById('sharkyMessage').style.display = "none"; /* Hide sharky message */
+                sharkContent.style.display = "none";
+                mainContent.style.display = "flex";
             }
         }
 
@@ -100,12 +99,16 @@
             var sharkImage = document.getElementById('sharkImage');
             var extraImage = document.getElementById('extraImage'); // Hide the extra image
             var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
 
             image.style.display = "none"; /* Hide the original image */
             message.style.display = "none"; /* Hide the original message */
-            sharkImage.style.display = "block"; /* Show the shark image */
             extraImage.style.display = "none"; /* Hide the extra image when shark appears */
+            sharkContent.style.display = "flex"; /* Show shark content */
+            sharkImage.style.display = "block"; /* Show the shark image */
             sharkyMessage.style.display = "block"; /* Show the sharky message */
+            mainContent.style.display = "none";
         }
 
         // Show the extra image initially
