@@ -65,6 +65,7 @@
         <img id="sharkImage3" src="sharky3.png" alt="Shark image 3">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
+        <p id="sharkyMessage3" class="sharky-message" style="display: none;">Ups, sorry wrong image.</p>
     </div>
     <script>
         function changeImage() {
@@ -99,6 +100,7 @@
                 document.getElementById('sharkImage2').style.display = "none"; /* Hide second shark image */
                 document.getElementById('sharkyMessage2').style.display = "none"; /* Hide second sharky message */
                 document.getElementById('sharkImage3').style.display = "none"; /* Hide third shark image */
+                document.getElementById('sharkyMessage3').style.display = "none"; /* Hide third sharky message */
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -138,10 +140,12 @@
             var sharkImage2 = document.getElementById('sharkImage2');
             var sharkImage3 = document.getElementById('sharkImage3');
             var sharkyMessage2 = document.getElementById('sharkyMessage2');
+            var sharkyMessage3 = document.getElementById('sharkyMessage3');
 
             sharkImage2.style.display = "none"; /* Hide shark image 2 */
             sharkImage3.style.display = "block"; /* Show shark image 3 */
             sharkyMessage2.style.display = "none"; /* Hide second sharky message */
+            sharkyMessage3.style.display = "block"; /* Show third sharky message */
         }
 
         // Show the extra image initially
