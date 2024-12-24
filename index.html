@@ -46,7 +46,7 @@
             display: none;
             margin-top: 20px; /* Add some space above the message */
         }
-        #sharkImage, #sharkImage2 {
+        #sharkImage, #sharkImage2, #sharkImage3 {
             display: none;
             max-width: 150px;
             height: auto;
@@ -61,7 +61,8 @@
     </div>
     <div class="content" id="sharkContent" style="display: none;">
         <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
-        <img id="sharkImage2" src="sharky2.png" alt="Shark image 2">
+        <img id="sharkImage2" src="sharky2.png" alt="Shark image 2" onclick="showSharkImage3()">
+        <img id="sharkImage3" src="sharky3.png" alt="Shark image 3">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
     </div>
@@ -97,6 +98,7 @@
                 document.getElementById('sharkyMessage').style.display = "none"; /* Hide sharky message */
                 document.getElementById('sharkImage2').style.display = "none"; /* Hide second shark image */
                 document.getElementById('sharkyMessage2').style.display = "none"; /* Hide second sharky message */
+                document.getElementById('sharkImage3').style.display = "none"; /* Hide third shark image */
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -130,6 +132,16 @@
             sharkImage2.style.display = "block"; /* Show shark image 2 */
             sharkyMessage.style.display = "none"; /* Hide first sharky message */
             sharkyMessage2.style.display = "block"; /* Show second sharky message */
+        }
+
+        function showSharkImage3() {
+            var sharkImage2 = document.getElementById('sharkImage2');
+            var sharkImage3 = document.getElementById('sharkImage3');
+            var sharkyMessage2 = document.getElementById('sharkyMessage2');
+
+            sharkImage2.style.display = "none"; /* Hide shark image 2 */
+            sharkImage3.style.display = "block"; /* Show shark image 3 */
+            sharkyMessage2.style.display = "none"; /* Hide second sharky message */
         }
 
         // Show the extra image initially
