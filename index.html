@@ -46,7 +46,7 @@
             display: none;
             margin-top: 20px; /* Add some space above the message */
         }
-        #sharkImage {
+        #sharkImage, #sharkImage2 {
             display: none;
             max-width: 150px;
             height: auto;
@@ -60,7 +60,8 @@
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
-        <img id="sharkImage" src="sharky1.png" alt="Shark image">
+        <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
+        <img id="sharkImage2" src="sharky2.png" alt="Shark image 2">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
     </div>
     <script>
@@ -93,6 +94,7 @@
                 message.style.color = "#8B0000"; /* Revert text color to original */
                 document.getElementById('sharkImage').style.display = "none"; /* Hide shark image */
                 document.getElementById('sharkyMessage').style.display = "none"; /* Hide sharky message */
+                document.getElementById('sharkImage2').style.display = "none"; /* Hide second shark image */
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -114,6 +116,14 @@
             sharkImage.style.display = "block"; /* Show the shark image */
             sharkyMessage.style.display = "block"; /* Show the sharky message */
             mainContent.style.display = "none";
+        }
+
+        function showSharkImage2() {
+            var sharkImage = document.getElementById('sharkImage');
+            var sharkImage2 = document.getElementById('sharkImage2');
+
+            sharkImage.style.display = "none"; /* Hide shark image 1 */
+            sharkImage2.style.display = "block"; /* Show shark image 2 */
         }
 
         // Show the extra image initially
