@@ -46,7 +46,7 @@
             display: none;
             margin-top: 20px;
         }
-        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5 {
+        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6 {
             display: none;
             max-width: 150px;
             height: auto;
@@ -70,12 +70,14 @@
         <img id="sharkImage2" src="sharky2.png" alt="Shark image 2" onclick="showSharkImage3()">
         <img id="sharkImage3" src="sharky3.png" alt="Shark image 3" onclick="showSharkImage4()">
         <img id="sharkImage4" src="sharky4.png" alt="Shark image 4" onclick="showSharkImage5()">
-        <img id="sharkImage5" src="sharky5.png" alt="Shark image 5">
+        <img id="sharkImage5" src="sharky5.png" alt="Shark image 5" onclick="showSharkImage6()">
+        <img id="sharkImage6" src="sharky6.png" alt="Shark image 6">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
         <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
         <p id="sharkyMessage4" class="sharky-message" style="display: none;">Sorry, I do not know what is going on...</p>
         <p id="sharkyMessage5" class="sharky-message" style="display: none;">Yikes.</p>
+        <p id="sharkyMessage6" class="sharky-message" style="display: none;">Anyways, </p>
     </div>
     <script>
         function changeImage() {
@@ -115,6 +117,8 @@
                 document.getElementById('sharkyMessage4').style.display = "none";
                 document.getElementById('sharkImage5').style.display = "none";
                 document.getElementById('sharkyMessage5').style.display = "none";
+                document.getElementById('sharkImage6').style.display = "none";
+                document.getElementById('sharkyMessage6').style.display = "none";
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -185,7 +189,19 @@
             sharkyMessage4.style.display = "none";
             sharkyMessage5.style.display = "block";
         }
+        
+        function showSharkImage6() {
+            var sharkImage5 = document.getElementById('sharkImage5');
+            var sharkImage6 = document.getElementById('sharkImage6');
+            var sharkyMessage5 = document.getElementById('sharkyMessage5');
+            var sharkyMessage6 = document.getElementById('sharkyMessage6');
 
+            sharkImage5.style.display = "none";
+            sharkImage6.style.display = "block";
+            sharkyMessage5.style.display = "none";
+            sharkyMessage6.style.display = "block";
+        }
+        
         document.getElementById('extraImage').style.display = "block";
     </script>
 </body>
