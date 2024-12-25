@@ -51,7 +51,7 @@
             max-width: 150px;
             height: auto;
         }
-        #sharkyMessage4 {
+        #sharkyMessage4, #sharkyMessage5 {
             font-size: 24px;
             color: #800000;
             display: none;
@@ -75,6 +75,7 @@
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
         <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
         <p id="sharkyMessage4" class="sharky-message" style="display: none;">Sorry, I do not know what is going on...</p>
+        <p id="sharkyMessage5" class="sharky-message" style="display: none;">Yikes.</p>
     </div>
     <script>
         function changeImage() {
@@ -113,6 +114,7 @@
                 document.getElementById('sharkImage4').style.display = "none";
                 document.getElementById('sharkyMessage4').style.display = "none";
                 document.getElementById('sharkImage5').style.display = "none";
+                document.getElementById('sharkyMessage5').style.display = "none";
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
@@ -151,38 +153,4 @@
         function showSharkImage3() {
             var sharkImage2 = document.getElementById('sharkImage2');
             var sharkImage3 = document.getElementById('sharkImage3');
-            var sharkyMessage2 = document.getElementById('sharkyMessage2');
-            var sharkyMessage3 = document.getElementById('sharkyMessage3');
-
-            sharkImage2.style.display = "none";
-            sharkImage3.style.display = "block";
-            sharkyMessage2.style.display = "none";
-            sharkyMessage3.style.display = "block";
-        }
-
-        function showSharkImage4() {
-            var sharkImage3 = document.getElementById('sharkImage3');
-            var sharkImage4 = document.getElementById('sharkImage4');
-            var sharkyMessage3 = document.getElementById('sharkyMessage3');
-            var sharkyMessage4 = document.getElementById('sharkyMessage4');
-
-            sharkImage3.style.display = "none";
-            sharkImage4.style.display = "block";
-            sharkyMessage3.style.display = "none";
-            sharkyMessage4.style.display = "block";
-        }
-
-        function showSharkImage5() {
-            var sharkImage4 = document.getElementById('sharkImage4');
-            var sharkImage5 = document.getElementById('sharkImage5');
-            var sharkyMessage4 = document.getElementById('sharkyMessage4');
-
-            sharkImage4.style.display = "none";
-            sharkImage5.style.display = "block";
-            sharkyMessage4.style.display = "block";
-        }
-
-        document.getElementById('extraImage').style.display = "block";
-    </script>
-</body>
-</html>
+            var sharkyMessage2 = document.getElementById('shark
