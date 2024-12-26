@@ -51,12 +51,6 @@
             max-width: 150px;
             height: auto;
         }
-        #sharkyMessage4 {
-            font-size: 24px;
-            color: #800000;
-            display: none;
-            margin-top: 20px;
-        }
         .extra-image2 {
             position: fixed;
             top: 10px;
@@ -64,13 +58,27 @@
             max-width: 100px;
             height: auto;
         }
+        .content p {
+            font-size: 28px;
+            color: #8B0000;
+        }
+        .meerkat-message {
+            font-size: 24px;
+            color: #004080;
+            display: none;
+            margin-top: 20px;
+        }
+        #meerkat1Image {
+            display: none;
+            max-width: 150px;
+            height: auto;
     </style>
 </head>
 <body>
     <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
-        <img id="extraImage2" class="extra-image2" src="ltcorner" alt="Extra image2" onclick="showMeerkatImage()">
+        <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2" onclick="showMeerkatImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
