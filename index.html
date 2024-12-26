@@ -46,17 +46,18 @@
             display: none;
             margin-top: 20px;
         }
-        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7 {
+        #sharkImage,
+        #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6,
+        #sharkImage7 {
             display: none;
             max-width: 150px;
             height: auto;
         }
-        .extra-image2 {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            max-width: 100px;
-            height: auto;
+        #sharkyMessage4 {
+            font-size: 24px;
+            color: #800000;
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -64,7 +65,6 @@
     <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
-        <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2" onclick="showMeerkatImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
@@ -74,7 +74,7 @@
         <img id="sharkImage4" src="sharky4.png" alt="Shark image 4" onclick="showSharkImage5()">
         <img id="sharkImage5" src="sharky5.png" alt="Shark image 5" onclick="showSharkImage6()">
         <img id="sharkImage6" src="sharky6.png" alt="Shark image 6" onclick="showSharkImage7()">
-        <img id="sharkImage7" src="sharky7.png" alt="Shark image 7">
+        <img id="sharkImage7" src="sharky7.png" alt="Shark image 7" onclick="backToMainContent()"> 
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
         <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
@@ -87,7 +87,6 @@
         function changeImage() {
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
-            var extraImage2 = document.getElementById('extraImage2');
             var message = document.getElementById('message');
             var body = document.body;
             var mainContent = document.getElementById('mainContent');
@@ -127,7 +126,6 @@
                 document.getElementById('sharkImage7').style.display = "none";
                 document.getElementById('sharkyMessage7').style.display = "none";
                 sharkContent.style.display = "none";
-                meerkatContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
         }
