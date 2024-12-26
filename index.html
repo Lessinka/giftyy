@@ -54,24 +54,10 @@
         .extra-image2 {
             position: fixed;
             top: 10px;
-            left: 10px;
+            right: 10px;
             max-width: 100px;
             height: auto;
         }
-        .content p {
-            font-size: 28px;
-            color: #8B0000;
-        }
-        .meerkat-message {
-            font-size: 24px;
-            color: #004080;
-            display: none;
-            margin-top: 20px;
-        }
-        #meerkat1Image {
-            display: none;
-            max-width: 150px;
-            height: auto;
     </style>
 </head>
 <body>
@@ -99,18 +85,14 @@
     </div>
     <div class="content" id="meerkatContent" style="display: none;">
         <img id="meerkatImage" src="meerkat1.png" alt="Meerkat image">
-        <p id="meerkatMessage" class="meerkat-message">Pookie.</p>
-    </div>
     <script>
         function changeImage() {
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
-            var extraImage = document.getElementById('extraImage2');
             var message = document.getElementById('message');
             var body = document.body;
             var mainContent = document.getElementById('mainContent');
             var sharkContent = document.getElementById('sharkContent');
-            var sharkContent = document.getElementById('meerkatContent');
 
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
