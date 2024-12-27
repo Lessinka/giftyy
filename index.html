@@ -87,7 +87,7 @@
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div id="meerkatContent">
-        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;">
+        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="changeMeerkatImage()">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
@@ -195,6 +195,15 @@
             meerkatContent.style.display = "flex"; // Ensure meerkatContent is displayed 
         }
 
+        function changeMeerkatImage() {
+            var meerkatImage = document.getElementById('meerkatImage');
+            if (meerkatImage.src.match("meerkat1.png")) {
+                meerkatImage.src = "meerkat2.png"; // Change to meerkat2.png
+            } else {
+                meerkatImage.src = "meerkat1.png"; // Change back to meerkat1.png (optional)
+            }
+        }
+
         function showSharkImage2() {
             var sharkImage = document.getElementById('sharkImage');
             var sharkImage2 = document.getElementById('sharkImage2');
@@ -242,7 +251,7 @@
             sharkyMessage4.style.display = "none";
             sharkyMessage5.style.display = "block";
         }
-        
+
         function showSharkImage6() {
             var sharkImage5 = document.getElementById('sharkImage5');
             var sharkImage6 = document.getElementById('sharkImage6');
