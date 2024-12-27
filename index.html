@@ -89,6 +89,7 @@
     <div id="meerkatContent">
         <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="changeMeerkatImage()">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
+        <p id="laughMessage" class="meerkat-message" style="display: none;">Wanna laugh?</p> <!-- New message paragraph -->
     </div>
     <div class="content" id="sharkContent" style="display: none;">
         <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
@@ -197,10 +198,13 @@
 
         function changeMeerkatImage() {
             var meerkatImage = document.getElementById('meerkatImage');
+            var laughMessage = document.getElementById('laughMessage'); // Get the laugh message element
             if (meerkatImage.src.match("meerkat1.png")) {
                 meerkatImage.src = "meerkat2.png"; // Change to meerkat2.png
+                laughMessage.style.display = "block"; // Show the "Wanna laugh?" message
             } else {
                 meerkatImage.src = "meerkat1.png"; // Change back to meerkat1.png (optional)
+                laughMessage.style.display = "none"; // Hide the "Wanna laugh?" message
             }
         }
 
