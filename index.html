@@ -231,18 +231,8 @@
             extraImage.style.display = "block";
             sharkyMessage7.style.display = "none";
             message.style.display = "block";
-
-            // Reset dino image state if necessary (e.g., if it was changed during shark sequence)
-            var dinoImage = document.getElementById('dinoImage');
-            if (dinoImage.src.match("sign.png.png") || 
-                dinoImage.src.match("angry.gif") || 
-                dinoImage.src.match("furious.png.png")) {
-                dinoImage.src = "dino.png.webp"; 
-            }
         }
 
-        document.getElementById('extraImage').style.display = "block";
-        document.getElementById('dinoImage').style.display = "block";
     </script>
 </body>
 </html>
