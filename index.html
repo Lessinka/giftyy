@@ -221,11 +221,16 @@
         }
 
         function backToMainContent() {
-            var mainContent = document.getElementById('mainContent');
-            var sharkContent = document.getElementById('sharkContent');
+            var sharkImage7 = document.getElementById('sharkImage7');
+            var dinoImage = document.getElementById('dinoImage');
+            var extraImage = document.getElementById('extraImage');
+            var message = document.getElementById('message');
 
-            sharkContent.style.display = "none";
-            mainContent.style.display = "flex";
+            sharkImage7.style.display = "none";
+            dinoImage.style.display = "block";
+            extraImage.style.display = "block";
+            sharkyMessage7.style.display = "none";
+            message.style.display = "block";
 
             // Reset dino image state if necessary (e.g., if it was changed during shark sequence)
             var dinoImage = document.getElementById('dinoImage');
@@ -237,6 +242,7 @@
         }
 
         document.getElementById('extraImage').style.display = "block";
+        document.getElementById('dinoImage').style.display = "block";
     </script>
 </body>
 </html>
