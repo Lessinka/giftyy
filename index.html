@@ -104,28 +104,33 @@
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
-                image.src = "dino.png.webp";
-                extraImage.style.display = "block";
-                body.style.backgroundColor = "lightcoral";
-                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
-                message.style.color = "#8B0000";
-                document.getElementById('sharkImage').style.display = "none";
-                document.getElementById('sharkyMessage').style.display = "none";
-                document.getElementById('sharkImage2').style.display = "none";
-                document.getElementById('sharkyMessage2').style.display = "none";
-                document.getElementById('sharkImage3').style.display = "none";
-                document.getElementById('sharkyMessage3').style.display = "none";
-                document.getElementById('sharkImage4').style.display = "none";
-                document.getElementById('sharkyMessage4').style.display = "none";
-                document.getElementById('sharkImage5').style.display = "none";
-                document.getElementById('sharkyMessage5').style.display = "none";
-                document.getElementById('sharkImage6').style.display = "none";
-                document.getElementById('sharkyMessage6').style.display = "none";
-                document.getElementById('sharkImage7').style.display = "none";
-                document.getElementById('sharkyMessage7').style.display = "none";
+                image.src = "dino.png.webp"; // Reset to original Dino image
+                extraImage.style.display = "block"; // Show the extra image
+                body.style.backgroundColor = "lightcoral"; // Reset background color
+                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life."; // Reset message
+                message.style.color = "#8B0000"; // Reset text color
+                // Hide all shark images and messages
+                hideSharkImagesAndMessages();
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
+        }
+
+        function hideSharkImagesAndMessages() {
+            document.getElementById('sharkImage').style.display = "none";
+            document.getElementById('sharkyMessage').style.display = "none";
+            document.getElementById('sharkImage2').style.display = "none";
+            document.getElementById('sharkyMessage2').style.display = "none";
+            document.getElementById('sharkImage3').style.display = "none";
+            document.getElementById('sharkyMessage3').style.display = "none";
+            document.getElementById('sharkImage4').style.display = "none";
+            document.getElementById('sharkyMessage4').style.display = "none";
+            document.getElementById('sharkImage5').style.display = "none";
+            document.getElementById('sharkyMessage5').style.display = "none";
+            document.getElementById('sharkImage6').style.display = "none";
+            document.getElementById('sharkyMessage6').style.display = "none";
+            document.getElementById('sharkImage7').style.display = "none";
+            document.getElementById('sharkyMessage7').style.display = "none";
         }
 
         function showSharkImage() {
@@ -234,20 +239,7 @@
             message.style.color = "#8B0000"; // Reset the text color
 
             // Hide all shark images and messages
-            document.getElementById('sharkImage').style.display = "none";
-            document.getElementById('sharkyMessage').style.display = "none";
-            document.getElementById('sharkImage2').style.display = "none";
-            document.getElementById('sharkyMessage2').style.display = "none";
-            document.getElementById('sharkImage3').style.display = "none";
-            document.getElementById('sharkyMessage3').style.display = "none";
-            document.getElementById('sharkImage4').style.display = "none";
-            document.getElementById('sharkyMessage4').style.display = "none";
-            document.getElementById('sharkImage5').style.display = "none";
-            document.getElementById('sharkyMessage5').style.display = "none";
-            document.getElementById('sharkImage6').style.display = "none";
-            document.getElementById('sharkyMessage6').style.display = "none";
-            document.getElementById('sharkImage7').style.display = "none";
-            document.getElementById('sharkyMessage7').style.display = "none";
+            hideSharkImagesAndMessages();
 
             // Show the main content back
             sharkContent.style.display = "none";
