@@ -203,6 +203,9 @@
                 meerkatImage.src = "meerkat2.png"; // Change to meerkat2.png
                 document.getElementById('meerkatMessage').style.display = "none"; // Hide first meerkat message
                 document.getElementById('meerkatMessage2').style.display = "block"; // Show meerkat message 2
+            } else if (meerkatImage.src.match("meerkat2.png")) { // New condition for meerkat2.png
+                meerkatImage.src = "meerkat3.png"; // Change to meerkat3.png
+                document.getElementById('meerkatMessage2').style.display = "none"; // Hide meerkat message 2
             } else {
                 meerkatImage.src = "meerkat1.png"; // Change back to meerkat1.png (optional)
                 document.getElementById('meerkatMessage').style.display = "block"; // Show first meerkat message
