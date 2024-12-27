@@ -104,7 +104,9 @@
         <p id="sharkyMessage6" class="sharky-message" style="display: none;">Anyways, we adore and love you very much.</p>
         <p id="sharkyMessage7" class="sharky-message" style="display: none;">Please, have a great day cutie.</p>
     </div>
-    <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto; display: none;">
+     <div class="content" id="meerkatContent" style="display: none;">
+        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto; display: none;">
+         <p id="meerkatMessage" class="meerkat-message" style="display: none;">Hey! You look adorable, almost like me.</p>
     <script>
         function changeImage() {
             var image = document.getElementById('dinoImage');
@@ -178,6 +180,7 @@
 
         function showMeerkatImage() {
             var meerkatImage = document.getElementById('meerkatImage');
+            var meerkatMessage = document.getElementById('meerkatMessage');
             var extraImage2 = document.getElementById('extraImage2');
             var image = document.getElementById('dinoImage');
             var message = document.getElementById('message');
@@ -194,7 +197,8 @@
             sharkyMessage.style.display = "none";
             mainContent.style.display = "none";
             extraImage2.style.display = "none";
-            meerkatImage.style.display = "block"; // Show meerkat image
+            meerkatImage.style.display = "block";
+            meerkatMessage.style.display = "block";
         }
 
         function showSharkImage2() {
