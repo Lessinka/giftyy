@@ -104,18 +104,7 @@
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
-                image.src = "dino.png.webp";
-                extraImage.style.display = "block";
-                body.style.backgroundColor = "lightcoral";
-                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
-                message.style.color = "#8B0000";
-                // Hide shark images and messages
-                for (let i = 1; i <= 7; i++) {
-                    document.getElementById(`sharkImage${i}`).style.display = "none";
-                    document.getElementById(`sharkyMessage${i}`).style.display = "none";
-                }
-                sharkContent.style.display = "none";
-                mainContent.style.display = "flex";
+                resetToStart();
             }
         }
 
@@ -208,7 +197,7 @@
             sharkyMessage6.style.display = "none";
             sharkyMessage7.style.display = "block";
 
-            // Add a click event to reset on the seventh shark image
+            // Add click event to reset to start when clicking on sharkImage7
             sharkImage7.onclick = resetToStart;
         }
         
