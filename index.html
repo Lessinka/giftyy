@@ -88,17 +88,17 @@
             var body = document.body;
 
             if (image.src.match("dino.png.webp")) {
-                image.src = "sign.png"; // Ensure source is correct
+                image.src = "sign.png.png"; // Ensure source is correct
                 extraImage.style.display = "none"; // Hide rtcorner image
                 extraImage2.style.display = "none"; // Hide ltcorner image
                 message.textContent = "Oh no ...";
-            } else if (image.src.match("sign.png")) {
+            } else if (image.src.match("sign.png.png")) {
                 image.src = "angry.gif";
                 body.style.backgroundColor = "#919191";
                 message.textContent = "Dino is angry with you, stop touching.";
                 message.style.color = "#000000";
             } else if (image.src.match("angry.gif")) {
-                image.src = "furious.png"; // Ensure source is correct
+                image.src = "furious.png.png"; // Ensure source is correct
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
