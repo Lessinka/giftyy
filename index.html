@@ -64,6 +64,21 @@
             max-width: 100px;
             height: auto;
         }
+        .content p {
+            font-size: 28px;
+            color: #8B0000;
+        }
+        .meerkat-message {
+            font-size: 24px;
+            color: #004080;
+            display: none;
+            margin-top: 20px;
+        }
+        #meerkatImage {
+            display: none;
+            max-width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -133,6 +148,7 @@
                 document.getElementById('sharkImage7').style.display = "none";
                 document.getElementById('sharkyMessage7').style.display = "none";
                 sharkContent.style.display = "none";
+                meerkatContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
         }
@@ -158,6 +174,20 @@
         function showMeerkatImage() {
             var meerkatImage = document.getElementById('meerkatImage');
             var extraImage2 = document.getElementById('extraImage2');
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+             image.style.display = "none";
+            message.style.display = "none";
+            extraImage.style.display = "none";
+            sharkContent.style.display = "none";
+            sharkImage.style.display = "none";
+            sharkyMessage.style.display = "none";
+            mainContent.style.display = "none";
             extraImage2.style.display = "none";
             meerkatImage.style.display = "block"; // Show meerkat image
         }
