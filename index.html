@@ -14,12 +14,15 @@
             margin: 0;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
+            position: relative;
         }
         .content {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            text-align: center;
         }
         .content img {
             max-width: 150px;
@@ -60,20 +63,20 @@
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
-        <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImageByIndex(2)">
-        <img id="sharkImage2" src="sharky2.png" alt="Shark image 2" onclick="showSharkImageByIndex(3)">
-        <img id="sharkImage3" src="sharky3.png" alt="Shark image 3" onclick="showSharkImageByIndex(4)">
-        <img id="sharkImage4" src="sharky4.png" alt="Shark image 4" onclick="showSharkImageByIndex(5)">
-        <img id="sharkImage5" src="sharky5.png" alt="Shark image 5" onclick="showSharkImageByIndex(6)">
-        <img id="sharkImage6" src="sharky6.png" alt="Shark image 6" onclick="showSharkImageByIndex(7)">
+        <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
+        <img id="sharkImage2" src="sharky2.png" alt="Shark image 2" onclick="showSharkImage3()">
+        <img id="sharkImage3" src="sharky3.png" alt="Shark image 3" onclick="showSharkImage4()">
+        <img id="sharkImage4" src="sharky4.png" alt="Shark image 4" onclick="showSharkImage5()">
+        <img id="sharkImage5" src="sharky5.png" alt="Shark image 5" onclick="showSharkImage6()">
+        <img id="sharkImage6" src="sharky6.png" alt="Shark image 6" onclick="showSharkImage7()">
         <img id="sharkImage7" src="sharky7.png" alt="Shark image 7">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
-        <p id="sharkyMessage2" class="sharky-message">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
-        <p id="sharkyMessage3" class="sharky-message">Oops, sorry wrong image.</p>
-        <p id="sharkyMessage4" class="sharky-message">Sorry, I do not know what is going on...</p>
-        <p id="sharkyMessage5" class="sharky-message">Yikes.</p>
-        <p id="sharkyMessage6" class="sharky-message">Anyways, we adore and love you very much.</p>
-        <p id="sharkyMessage7" class="sharky-message">Please, have a great day cutie.</p>
+        <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
+        <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
+        <p id="sharkyMessage4" class="sharky-message" style="display: none;">Sorry, I do not know what is going on...</p>
+        <p id="sharkyMessage5" class="sharky-message" style="display: none;">Yikes.</p>
+        <p id="sharkyMessage6" class="sharky-message" style="display: none;">Anyways, we adore and love you very much.</p>
+        <p id="sharkyMessage7" class="sharky-message" style="display: none;">Please, have a great day cutie.</p>
     </div>
     <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="display: none;">
     <script>
@@ -82,66 +85,165 @@
             var extraImage2 = document.getElementById('extraImage2'); // The left corner image
             var message = document.getElementById('message');
             var body = document.body;
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
 
             if (image.src.match("dino.png.webp")) {
-                image.src = "sign.png"; // Corrected the source format
+                image.src = "sign.png.png"; // Ensure source is correct
                 extraImage2.style.display = "none"; // Hide ltcorner image
                 message.textContent = "Oh no ...";
-            } else if (image.src.match("sign.png")) {
+            } else if (image.src.match("sign.png.png")) {
                 image.src = "angry.gif";
                 body.style.backgroundColor = "#919191";
                 message.textContent = "Dino is angry with you, stop touching.";
                 message.style.color = "#000000";
             } else if (image.src.match("angry.gif")) {
-                image.src = "furious.png"; // Corrected the source format
+                image.src = "furious.png.png";
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
                 image.src = "dino.png.webp"; // Reset to original image
-                extraImage2.style.display = "block"; // Show ltcorner image again
+                extraImage2.style.display = "block"; // Make ltcorner image visible again
                 body.style.backgroundColor = "lightcoral";
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000";
-                resetSharkContent(); // Reset shark content visibility
+                // Reset shark content visibility
+                resetSharkContent();
+                mainContent.style.display = "flex";
             }
         }
 
         function resetSharkContent() {
-            const sharkImages = document.querySelectorAll("#sharkContent img");
-            const sharkMessages = document.querySelectorAll(".sharky-message");
-
-            sharkImages.forEach(img => img.style.display = "none");
-            sharkMessages.forEach(msg => msg.style.display = "none");
-            document.getElementById('meerkatImage').style.display = "none"; // Reset meerkat visibility
-            document.getElementById('sharkContent').style.display = "none";
+            document.getElementById('sharkImage').style.display = "none";
+            document.getElementById('sharkyMessage').style.display = "none";
+            document.getElementById('sharkImage2').style.display = "none";
+            document.getElementById('sharkyMessage2').style.display = "none";
+            document.getElementById('sharkImage3').style.display = "none";
+            document.getElementById('sharkyMessage3').style.display = "none";
+            document.getElementById('sharkImage4').style.display = "none";
+            document.getElementById('sharkyMessage4').style.display = "none";
+            document.getElementById('sharkImage5').style.display = "none";
+            document.getElementById('sharkyMessage5').style.display = "none";
+            document.getElementById('sharkImage6').style.display = "none";
+            document.getElementById('sharkyMessage6').style.display = "none";
+            document.getElementById('sharkImage7').style.display = "none";
+            document.getElementById('sharkyMessage7').style.display = "none";
+            document.getElementById('meerkatImage').style.display = "none";
+            sharkContent.style.display = "none";
         }
 
         function showSharkImage() {
-            resetMainContent();
-            document.getElementById('sharkImage').style.display = "block";
-            document.getElementById('sharkyMessage').style.display = "block";
-        }
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
 
-        function resetMainContent() {
-            document.getElementById('mainContent').style.display = "none";
-            document.getElementById('sharkContent').style.display = "flex";
+            image.style.display = "none";
+            message.style.display = "none";
+            extraImage.style.display = "none";
+            sharkContent.style.display = "flex";
+            sharkImage.style.display = "block";
+            sharkyMessage.style.display = "block";
+            mainContent.style.display = "none";
         }
 
         function showMeerkatImage() {
-            resetMainContent();
-            document.getElementById('meerkatImage').style.display = "block"; // Show meerkat image
+            var meerkatImage = document.getElementById('meerkatImage');
+            var extraImage2 = document.getElementById('extraImage2');
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+            
+            image.style.display = "none";
+            message.style.display = "none";
+            extraImage.style.display = "none";
+            sharkContent.style.display = "none";
+            sharkImage.style.display = "none";
+            sharkyMessage.style.display = "none";
+            mainContent.style.display = "none";
+            extraImage2.style.display = "none";
+            meerkatImage.style.display = "block"; // Show meerkat image
         }
 
-        function showSharkImageByIndex(index) {
-            const totalImages = 7;
-            const sharkImage = document.getElementById(`sharkImage${index}`);
-            const sharkMessage = document.getElementById(`sharkyMessage${index}`);
+        function showSharkImage2() {
+            var sharkImage = document.getElementById('sharkImage');
+            var sharkImage2 = document.getElementById('sharkImage2');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var sharkyMessage2 = document.getElementById('sharkyMessage2');
 
-            resetSharkContent(); // Hide all
-            sharkImage.style.display = "block"; // show selected image
-            sharkMessage.style.display = "block"; // show corresponding message
+            sharkImage.style.display = "none";
+            sharkImage2.style.display = "block";
+            sharkyMessage.style.display = "none";
+            sharkyMessage2.style.display = "block";
         }
 
+        function showSharkImage3() {
+            var sharkImage2 = document.getElementById('sharkImage2');
+            var sharkImage3 = document.getElementById('sharkImage3');
+            var sharkyMessage2 = document.getElementById('sharkyMessage2');
+            var sharkyMessage3 = document.getElementById('sharkyMessage3');
+
+            sharkImage2.style.display = "none";
+            sharkImage3.style.display = "block";
+            sharkyMessage2.style.display = "none";
+            sharkyMessage3.style.display = "block";
+        }
+
+        function showSharkImage4() {
+            var sharkImage3 = document.getElementById('sharkImage3');
+            var sharkImage4 = document.getElementById('sharkImage4');
+            var sharkyMessage3 = document.getElementById('sharkyMessage3');
+            var sharkyMessage4 = document.getElementById('sharkyMessage4');
+
+            sharkImage3.style.display = "none";
+            sharkImage4.style.display = "block";
+            sharkyMessage3.style.display = "none";
+            sharkyMessage4.style.display = "block";
+        }
+
+        function showSharkImage5() {
+            var sharkImage4 = document.getElementById('sharkImage4');
+            var sharkImage5 = document.getElementById('sharkImage5');
+            var sharkyMessage4 = document.getElementById('sharkyMessage4');
+            var sharkyMessage5 = document.getElementById('sharkyMessage5');
+
+            sharkImage4.style.display = "none";
+            sharkImage5.style.display = "block";
+            sharkyMessage4.style.display = "none";
+            sharkyMessage5.style.display = "block";
+        }
+        
+        function showSharkImage6() {
+            var sharkImage5 = document.getElementById('sharkImage5');
+            var sharkImage6 = document.getElementById('sharkImage6');
+            var sharkyMessage5 = document.getElementById('sharkyMessage5');
+            var sharkyMessage6 = document.getElementById('sharkyMessage6');
+
+            sharkImage5.style.display = "none";
+            sharkImage6.style.display = "block";
+            sharkyMessage5.style.display = "none";
+            sharkyMessage6.style.display = "block";
+        }
+        
+        function showSharkImage7() {
+            var sharkImage6 = document.getElementById('sharkImage6');
+            var sharkImage7 = document.getElementById('sharkImage7');
+            var sharkyMessage6 = document.getElementById('sharkyMessage6');
+            var sharkyMessage7 = document.getElementById('sharkyMessage7');
+
+            sharkImage6.style.display = "none";
+            sharkImage7.style.display = "block";
+            sharkyMessage6.style.display = "none";
+            sharkyMessage7.style.display = "block";
+        }
+        
         document.getElementById('extraImage').style.display = "block";
     </script>
 </body>
