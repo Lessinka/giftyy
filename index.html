@@ -109,10 +109,12 @@
         function changeImage() {
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
+            var extraImage2 = document.getElementById('extraImage2');
             var message = document.getElementById('message');
             var body = document.body;
             var mainContent = document.getElementById('mainContent');
             var sharkContent = document.getElementById('sharkContent');
+            var meerkatContent = document.getElementById('meerkatContent');
 
             if (image.src.match("dino.png.webp")) {
                 image.src = "sign.png.png";
@@ -130,6 +132,7 @@
             } else {
                 image.src = "dino.png.webp";
                 extraImage.style.display = "block";
+                extraImage2.style.display = "block";
                 body.style.backgroundColor = "lightcoral";
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000";
@@ -147,6 +150,7 @@
                 document.getElementById('sharkyMessage6').style.display = "none";
                 document.getElementById('sharkImage7').style.display = "none";
                 document.getElementById('sharkyMessage7').style.display = "none";
+                document.getElementById('meerkatImage').style.display = "none";
                 sharkContent.style.display = "none";
                 meerkatContent.style.display = "none";
                 mainContent.style.display = "flex";
