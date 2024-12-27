@@ -46,7 +46,7 @@
             display: none;
             margin-top: 20px;
         }
-        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7, #meerkatImage {
+        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7, #meerkatImage, #meerkatImage2 {
             display: none;
             max-width: 150px;
             height: auto;
@@ -80,16 +80,20 @@
     </style>
 </head>
 <body>
+
     <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
         <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2" onclick="showMeerkatImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
+
     <div id="meerkatContent">
-        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;">
+        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="showMeerkat2()">
+        <img id="meerkatImage2" src="meerkat2.png" alt="Meerkat Image 2" style="display:none; max-width: 150px; height: auto;">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
     </div>
+
     <div class="content" id="sharkContent" style="display: none;">
         <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
         <img id="sharkImage2" src="sharky2.png" alt="Shark image 2" onclick="showSharkImage3()">
@@ -106,6 +110,7 @@
         <p id="sharkyMessage6" class="sharky-message" style="display: none;">Anyways, we adore and love you very much.</p>
         <p id="sharkyMessage7" class="sharky-message" style="display: none;">Please, have a great day cutie.</p>
     </div>
+
     <script>
         function changeImage() {
             var image = document.getElementById('dinoImage');
@@ -193,6 +198,14 @@
             meerkatImage.style.display = "block"; // Show meerkat image
             document.getElementById('meerkatMessage').style.display = "block"; // Show meerkat message
             meerkatContent.style.display = "flex"; // Ensure meerkatContent is displayed 
+        }
+
+        function showMeerkat2() {
+            var meerkatImage = document.getElementById('meerkatImage');
+            var meerkatImage2 = document.getElementById('meerkatImage2');
+
+            meerkatImage.style.display = "none"; // Hide meerkat1
+            meerkatImage2.style.display = "block"; // Show meerkat2
         }
 
         function showSharkImage2() {
