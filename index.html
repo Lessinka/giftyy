@@ -51,6 +51,12 @@
             max-width: 150px;
             height: auto;
         }
+        #sharkyMessage4 {
+            font-size: 24px;
+            color: #800000;
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +72,7 @@
         <img id="sharkImage4" src="sharky4.png" alt="Shark image 4" onclick="showSharkImage5()">
         <img id="sharkImage5" src="sharky5.png" alt="Shark image 5" onclick="showSharkImage6()">
         <img id="sharkImage6" src="sharky6.png" alt="Shark image 6" onclick="showSharkImage7()">
-        <img id="sharkImage7" src="sharky7.png" alt="Shark image 7" onclick="goBackToDino()">
+        <img id="sharkImage7" src="sharky7.png" alt="Shark image 7">
         <p id="sharkyMessage" class="sharky-message">Hello, Sharky just wanted to say you are perfect and he is extremely proud of who you have become.</p>
         <p id="sharkyMessage2" class="sharky-message" style="display: none;">Your eyes, little nose, lips, arms, legs, hips, chest ... perfect as it can get.</p>
         <p id="sharkyMessage3" class="sharky-message" style="display: none;">Oops, sorry wrong image.</p>
@@ -98,33 +104,19 @@
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
-                image.src = "dino.png.webp"; // Reset to original Dino image
-                extraImage.style.display = "block"; // Show the extra image
-                body.style.backgroundColor = "lightcoral"; // Reset background color
-                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life."; // Reset message
-                message.style.color = "#8B0000"; // Reset text color
-                // Hide all shark images and messages
-                hideSharkImagesAndMessages();
+                image.src = "dino.png.webp";
+                extraImage.style.display = "block";
+                body.style.backgroundColor = "lightcoral";
+                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
+                message.style.color = "#8B0000";
+                // Hide shark images and messages
+                for (let i = 1; i <= 7; i++) {
+                    document.getElementById(`sharkImage${i}`).style.display = "none";
+                    document.getElementById(`sharkyMessage${i}`).style.display = "none";
+                }
                 sharkContent.style.display = "none";
                 mainContent.style.display = "flex";
             }
-        }
-
-        function hideSharkImagesAndMessages() {
-            document.getElementById('sharkImage').style.display = "none";
-            document.getElementById('sharkyMessage').style.display = "none";
-            document.getElementById('sharkImage2').style.display = "none";
-            document.getElementById('sharkyMessage2').style.display = "none";
-            document.getElementById('sharkImage3').style.display = "none";
-            document.getElementById('sharkyMessage3').style.display = "none";
-            document.getElementById('sharkImage4').style.display = "none";
-            document.getElementById('sharkyMessage4').style.display = "none";
-            document.getElementById('sharkImage5').style.display = "none";
-            document.getElementById('sharkyMessage5').style.display = "none";
-            document.getElementById('sharkImage6').style.display = "none";
-            document.getElementById('sharkyMessage6').style.display = "none";
-            document.getElementById('sharkImage7').style.display = "none";
-            document.getElementById('sharkyMessage7').style.display = "none";
         }
 
         function showSharkImage() {
@@ -192,7 +184,7 @@
             sharkyMessage4.style.display = "none";
             sharkyMessage5.style.display = "block";
         }
-        
+
         function showSharkImage6() {
             var sharkImage5 = document.getElementById('sharkImage5');
             var sharkImage6 = document.getElementById('sharkImage6');
@@ -204,7 +196,7 @@
             sharkyMessage5.style.display = "none";
             sharkyMessage6.style.display = "block";
         }
-        
+
         function showSharkImage7() {
             var sharkImage6 = document.getElementById('sharkImage6');
             var sharkImage7 = document.getElementById('sharkImage7');
@@ -215,29 +207,35 @@
             sharkImage7.style.display = "block";
             sharkyMessage6.style.display = "none";
             sharkyMessage7.style.display = "block";
-        }
 
-        // Function to go back to the Dino image and its message
-        function goBackToDino() {
+            // Add a click event to reset on the seventh shark image
+            sharkImage7.onclick = resetToStart;
+        }
+        
+        function resetToStart() {
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
             var message = document.getElementById('message');
+            var body = document.body;
             var mainContent = document.getElementById('mainContent');
             var sharkContent = document.getElementById('sharkContent');
-            var body = document.body;
 
-            image.src = "dino.png.webp"; // Reset to the original Dino image
-            extraImage.style.display = "block"; // Show the extra image
-            body.style.backgroundColor = "lightcoral"; // Reset the background color
-            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life."; // Reset the text
-            message.style.color = "#8B0000"; // Reset the text color
+            // Reset dino image and message
+            image.src = "dino.png.webp"; // Reset to original dino image
+            extraImage.style.display = "block"; // Show extra image
+            body.style.backgroundColor = "lightcoral"; // Reset background color
+            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life."; // Reset message
+            message.style.color = "#8B0000"; // Reset message color
 
             // Hide all shark images and messages
-            hideSharkImagesAndMessages();
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById(`sharkImage${i}`).style.display = "none";
+                document.getElementById(`sharkyMessage${i}`).style.display = "none";
+            }
 
-            // Show the main content back
-            sharkContent.style.display = "none";
+            // Show main content and hide shark content
             mainContent.style.display = "flex";
+            sharkContent.style.display = "none";
         }
 
         document.getElementById('extraImage').style.display = "block";
