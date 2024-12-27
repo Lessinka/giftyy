@@ -195,7 +195,7 @@
             sharkyMessage4.style.display = "none";
             sharkyMessage5.style.display = "block";
         }
-        
+
         function showSharkImage6() {
             var sharkImage5 = document.getElementById('sharkImage5');
             var sharkImage6 = document.getElementById('sharkImage6');
@@ -207,8 +207,8 @@
             sharkyMessage5.style.display = "none";
             sharkyMessage6.style.display = "block";
         }
-        
-           function showSharkImage7() {
+
+        function showSharkImage7() {
             var sharkImage6 = document.getElementById('sharkImage6');
             var sharkImage7 = document.getElementById('sharkImage7');
             var sharkyMessage6 = document.getElementById('sharkyMessage6');
@@ -219,7 +219,23 @@
             sharkyMessage6.style.display = "none";
             sharkyMessage7.style.display = "block";
         }
-        
+
+        function backToMainContent() {
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+
+            sharkContent.style.display = "none";
+            mainContent.style.display = "flex";
+
+            // Reset dino image state if necessary (e.g., if it was changed during shark sequence)
+            var dinoImage = document.getElementById('dinoImage');
+            if (dinoImage.src.match("sign.png.png") || 
+                dinoImage.src.match("angry.gif") || 
+                dinoImage.src.match("furious.png.png")) {
+                dinoImage.src = "dino.png.webp"; 
+            }
+        }
+
         document.getElementById('extraImage').style.display = "block";
     </script>
 </body>
