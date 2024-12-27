@@ -46,7 +46,7 @@
             display: none;
             margin-top: 20px;
         }
-        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7 {
+        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7, #meerkatImage {
             display: none;
             max-width: 150px;
             height: auto;
@@ -70,7 +70,7 @@
     <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
-        <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2">
+        <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2" onclick="showMeerkatImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
@@ -89,6 +89,7 @@
         <p id="sharkyMessage6" class="sharky-message" style="display: none;">Anyways, we adore and love you very much.</p>
         <p id="sharkyMessage7" class="sharky-message" style="display: none;">Please, have a great day cutie.</p>
     </div>
+    <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="display: none;">
     <script>
         function changeImage() {
             var image = document.getElementById('dinoImage');
@@ -154,6 +155,13 @@
             mainContent.style.display = "none";
         }
 
+        function showMeerkatImage() {
+            var meerkatImage = document.getElementById('meerkatImage');
+            var extraImage2 = document.getElementById('extraImage2');
+            extraImage2.style.display = "none";
+            meerkatImage.style.display = "block"; // Show meerkat image
+        }
+
         function showSharkImage2() {
             var sharkImage = document.getElementById('sharkImage');
             var sharkImage2 = document.getElementById('sharkImage2');
@@ -214,7 +222,7 @@
             sharkyMessage6.style.display = "block";
         }
         
-           function showSharkImage7() {
+        function showSharkImage7() {
             var sharkImage6 = document.getElementById('sharkImage6');
             var sharkImage7 = document.getElementById('sharkImage7');
             var sharkyMessage6 = document.getElementById('sharkyMessage6');
