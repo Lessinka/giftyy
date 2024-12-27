@@ -89,6 +89,7 @@
     <div id="meerkatContent">
         <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="changeMeerkatImage()">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
+        <p id="meerkatMessage2" class="meerkat-message" style="display: none;">Wanna laugh?</p> <!-- Added the second message here -->
     </div>
     <div class="content" id="sharkContent" style="display: none;">
         <img id="sharkImage" src="sharky1.png" alt="Shark image" onclick="showSharkImage2()">
@@ -192,6 +193,7 @@
             mainContent.style.display = "none";
             meerkatImage.style.display = "block"; // Show meerkat image
             document.getElementById('meerkatMessage').style.display = "block"; // Show meerkat message
+            document.getElementById('meerkatMessage2').style.display = "none"; // Hide meerkat message 2 initially
             meerkatContent.style.display = "flex"; // Ensure meerkatContent is displayed 
         }
 
@@ -199,8 +201,12 @@
             var meerkatImage = document.getElementById('meerkatImage');
             if (meerkatImage.src.match("meerkat1.png")) {
                 meerkatImage.src = "meerkat2.png"; // Change to meerkat2.png
+                document.getElementById('meerkatMessage').style.display = "none"; // Hide first meerkat message
+                document.getElementById('meerkatMessage2').style.display = "block"; // Show meerkat message 2
             } else {
                 meerkatImage.src = "meerkat1.png"; // Change back to meerkat1.png (optional)
+                document.getElementById('meerkatMessage').style.display = "block"; // Show first meerkat message
+                document.getElementById('meerkatMessage2').style.display = "none"; // Hide meerkat message 2
             }
         }
 
