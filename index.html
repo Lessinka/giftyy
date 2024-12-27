@@ -36,6 +36,27 @@
             max-width: 100px;
             height: auto;
         }
+        .content p {
+            font-size: 28px;
+            color: #8B0000;
+        }
+        .sharky-message {
+            font-size: 24px;
+            color: #004080;
+            display: none;
+            margin-top: 20px;
+        }
+        #sharkImage, #sharkImage2, #sharkImage3, #sharkImage4, #sharkImage5, #sharkImage6, #sharkImage7, #meerkatImage {
+            display: none;
+            max-width: 150px;
+            height: auto;
+        }
+        #sharkyMessage4 {
+            font-size: 24px;
+            color: #800000;
+            display: none;
+            margin-top: 20px;
+        }
         .extra-image2 {
             position: fixed;
             top: 10px;
@@ -47,11 +68,22 @@
             font-size: 28px;
             color: #8B0000;
         }
+        .meerkat-message {
+            font-size: 24px;
+            color: #004080;
+            display: none;
+            margin-top: 20px;
+        }
+        #meerkatImage {
+            display: none;
+            max-width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="content" id="mainContent">
-        <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="handleDinoClick()">
+        <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
         <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2" onclick="showMeerkatImage()">
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
@@ -74,17 +106,19 @@
     </div>
     <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto; display: none;">
     <script>
-        function handleDinoClick() {
+        function changeImage() {
             var image = document.getElementById('dinoImage');
-            var extraImage = document.getElementById('extraImage'); // The right corner image
-            var extraImage2 = document.getElementById('extraImage2'); // The left corner image
+            var extraImage = document.getElementById('extraImage');
+            var extraImage2 = document.getElementById('extraImage2');
             var message = document.getElementById('message');
             var body = document.body;
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+            var meerkatContent = document.getElementById('meerkatContent');
 
             if (image.src.match("dino.png.webp")) {
-                image.src = "sign.png.png"; // Ensure source is correct
-                extraImage.style.display = "none"; // Hide rtcorner image
-                extraImage2.style.display = "none"; // Hide ltcorner image
+                image.src = "sign.png.png";
+                extraImage.style.display = "none";
                 message.textContent = "Oh no ...";
             } else if (image.src.match("sign.png.png")) {
                 image.src = "angry.gif";
@@ -92,56 +126,73 @@
                 message.textContent = "Dino is angry with you, stop touching.";
                 message.style.color = "#000000";
             } else if (image.src.match("angry.gif")) {
-                image.src = "furious.png.png"; // Ensure source is correct
+                image.src = "furious.png.png";
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
-                image.src = "dino.png.webp"; // Reset to original image
-                extraImage.style.display = "block"; // Show rtcorner image
-                extraImage2.style.display = "block"; // Show ltcorner image again
+                image.src = "dino.png.webp";
+                extraImage.style.display = "block";
+                extraImage2.style.display = "block";
                 body.style.backgroundColor = "lightcoral";
                 message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
                 message.style.color = "#8B0000";
-                resetSharkContent(); // Reset shark content visibility
+                document.getElementById('sharkImage').style.display = "none";
+                document.getElementById('sharkyMessage').style.display = "none";
+                document.getElementById('sharkImage2').style.display = "none";
+                document.getElementById('sharkyMessage2').style.display = "none";
+                document.getElementById('sharkImage3').style.display = "none";
+                document.getElementById('sharkyMessage3').style.display = "none";
+                document.getElementById('sharkImage4').style.display = "none";
+                document.getElementById('sharkyMessage4').style.display = "none";
+                document.getElementById('sharkImage5').style.display = "none";
+                document.getElementById('sharkyMessage5').style.display = "none";
+                document.getElementById('sharkImage6').style.display = "none";
+                document.getElementById('sharkyMessage6').style.display = "none";
+                document.getElementById('sharkImage7').style.display = "none";
+                document.getElementById('sharkyMessage7').style.display = "none";
+                document.getElementById('meerkatImage').style.display = "none";
+                sharkContent.style.display = "none";
+                meerkatContent.style.display = "none";
+                mainContent.style.display = "flex";
             }
         }
 
-        function resetSharkContent() {
-            document.getElementById('sharkImage').style.display = "none";
-            document.getElementById('sharkyMessage').style.display = "none";
-            document.getElementById('sharkImage2').style.display = "none";
-            document.getElementById('sharkyMessage2').style.display = "none";
-            document.getElementById('sharkImage3').style.display = "none";
-            document.getElementById('sharkyMessage3').style.display = "none";
-            document.getElementById('sharkImage4').style.display = "none";
-            document.getElementById('sharkyMessage4').style.display = "none";
-            document.getElementById('sharkImage5').style.display = "none";
-            document.getElementById('sharkyMessage5').style.display = "none";
-            document.getElementById('sharkImage6').style.display = "none";
-            document.getElementById('sharkyMessage6').style.display = "none";
-            document.getElementById('sharkImage7').style.display = "none";
-            document.getElementById('sharkyMessage7').style.display = "none";
-            document.getElementById('meerkatImage').style.display = "none"; // Reset meerkat visibility
-            document.getElementById('sharkContent').style.display = "none";
-        }
-
         function showSharkImage() {
-            document.getElementById('dinoImage').style.display = "none";
-            document.getElementById('message').style.display = "none";
-            document.getElementById('extraImage').style.display = "none";
-            document.getElementById('extraImage2').style.display = "none"; // Hide ltcorner image
-            document.getElementById('sharkContent').style.display = "flex";
-            document.getElementById('sharkImage').style.display = "block";
-            document.getElementById('sharkyMessage').style.display = "block";
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+
+            image.style.display = "none";
+            message.style.display = "none";
+            extraImage.style.display = "none";
+            sharkContent.style.display = "flex";
+            sharkImage.style.display = "block";
+            sharkyMessage.style.display = "block";
+            mainContent.style.display = "none";
         }
 
         function showMeerkatImage() {
             var meerkatImage = document.getElementById('meerkatImage');
-            document.getElementById('dinoImage').style.display = "none";
-            document.getElementById('message').style.display = "none";
-            document.getElementById('extraImage').style.display = "none"; // Hide rtcorner image
-            document.getElementById('extraImage2').style.display = "none"; // Hide ltcorner image
-            document.getElementById('sharkContent').style.display = "none";
+            var extraImage2 = document.getElementById('extraImage2');
+            var image = document.getElementById('dinoImage');
+            var message = document.getElementById('message');
+            var sharkImage = document.getElementById('sharkImage');
+            var extraImage = document.getElementById('extraImage');
+            var sharkyMessage = document.getElementById('sharkyMessage');
+            var mainContent = document.getElementById('mainContent');
+            var sharkContent = document.getElementById('sharkContent');
+             image.style.display = "none";
+            message.style.display = "none";
+            extraImage.style.display = "none";
+            sharkContent.style.display = "none";
+            sharkImage.style.display = "none";
+            sharkyMessage.style.display = "none";
+            mainContent.style.display = "none";
+            extraImage2.style.display = "none";
             meerkatImage.style.display = "block"; // Show meerkat image
         }
 
