@@ -57,12 +57,20 @@
             display: none;
             margin-top: 20px;
         }
+        .extra-image2 {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            max-width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="content" id="mainContent">
         <img id="dinoImage" src="dino.png.webp" alt="Dino with sign" onclick="changeImage()">
         <img id="extraImage" class="extra-image" src="rtcorner.png" alt="Extra image" onclick="showSharkImage()">
+        <img id="extraImage2" class="extra-image2" src="ltcorner.png" alt="Extra image2"
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div class="content" id="sharkContent" style="display: none;">
@@ -85,6 +93,7 @@
         function changeImage() {
             var image = document.getElementById('dinoImage');
             var extraImage = document.getElementById('extraImage');
+            var extraImage2 = document.getElementById('extraImage2');
             var message = document.getElementById('message');
             var body = document.body;
             var mainContent = document.getElementById('mainContent');
@@ -104,7 +113,27 @@
                 body.style.backgroundColor = "#380000";
                 message.textContent = "You made the dino furious, good job.";
             } else {
-                resetToStart();
+                image.src = "dino.png.webp";
+                extraImage.style.display = "block";
+                body.style.backgroundColor = "lightcoral";
+                message.textContent = "Merry Christmas, I love you so much, thank you for being in my life.";
+                message.style.color = "#8B0000";
+                document.getElementById('sharkImage').style.display = "none";
+                document.getElementById('sharkyMessage').style.display = "none";
+                document.getElementById('sharkImage2').style.display = "none";
+                document.getElementById('sharkyMessage2').style.display = "none";
+                document.getElementById('sharkImage3').style.display = "none";
+                document.getElementById('sharkyMessage3').style.display = "none";
+                document.getElementById('sharkImage4').style.display = "none";
+                document.getElementById('sharkyMessage4').style.display = "none";
+                document.getElementById('sharkImage5').style.display = "none";
+                document.getElementById('sharkyMessage5').style.display = "none";
+                document.getElementById('sharkImage6').style.display = "none";
+                document.getElementById('sharkyMessage6').style.display = "none";
+                document.getElementById('sharkImage7').style.display = "none";
+                document.getElementById('sharkyMessage7').style.display = "none";
+                sharkContent.style.display = "none";
+                mainContent.style.display = "flex";
             }
         }
 
@@ -113,6 +142,7 @@
             var message = document.getElementById('message');
             var sharkImage = document.getElementById('sharkImage');
             var extraImage = document.getElementById('extraImage');
+            var extraImage2 = document.getElementById('extraImage2');
             var sharkyMessage = document.getElementById('sharkyMessage');
             var mainContent = document.getElementById('mainContent');
             var sharkContent = document.getElementById('sharkContent');
@@ -120,6 +150,7 @@
             image.style.display = "none";
             message.style.display = "none";
             extraImage.style.display = "none";
+            extraImage2.style.display = "none";
             sharkContent.style.display = "flex";
             sharkImage.style.display = "block";
             sharkyMessage.style.display = "block";
@@ -173,7 +204,7 @@
             sharkyMessage4.style.display = "none";
             sharkyMessage5.style.display = "block";
         }
-
+        
         function showSharkImage6() {
             var sharkImage5 = document.getElementById('sharkImage5');
             var sharkImage6 = document.getElementById('sharkImage6');
@@ -185,8 +216,8 @@
             sharkyMessage5.style.display = "none";
             sharkyMessage6.style.display = "block";
         }
-
-        function showSharkImage7() {
+        
+           function showSharkImage7() {
             var sharkImage6 = document.getElementById('sharkImage6');
             var sharkImage7 = document.getElementById('sharkImage7');
             var sharkyMessage6 = document.getElementById('sharkyMessage6');
@@ -196,38 +227,10 @@
             sharkImage7.style.display = "block";
             sharkyMessage6.style.display = "none";
             sharkyMessage7.style.display = "block";
-
-            // Add click event to reset to start when clicking on sharkImage7
-            sharkImage7.onclick = resetToStart;
         }
         
-        function resetToStart() {
-            var image = document.getElementById('dinoImage');
-            var extraImage = document.getElementById('extraImage');
-            var message = document.getElementById('message');
-            var body = document.body;
-            var mainContent = document.getElementById('mainContent');
-            var sharkContent = document.getElementById('sharkContent');
-
-            // Reset dino image and message
-            image.src = "dino.png.webp"; // Reset to original dino image
-            extraImage.style.display = "block"; // Show extra image
-            body.style.backgroundColor = "lightcoral"; // Reset background color
-            message.textContent = "Merry Christmas, I love you so much, thank you for being in my life."; // Reset message
-            message.style.color = "#8B0000"; // Reset message color
-
-            // Hide all shark images and messages
-            for (let i = 1; i <= 7; i++) {
-                document.getElementById(`sharkImage${i}`).style.display = "none";
-                document.getElementById(`sharkyMessage${i}`).style.display = "none";
-            }
-
-            // Show main content and hide shark content
-            mainContent.style.display = "flex";
-            sharkContent.style.display = "none";
-        }
-
         document.getElementById('extraImage').style.display = "block";
+        document.getElementById('extraImage2').style.display = "block";
     </script>
 </body>
 </html>
