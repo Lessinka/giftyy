@@ -51,12 +51,6 @@
             max-width: 150px;
             height: auto;
         }
-        #sharkyMessage4 {
-            font-size: 24px;
-            color: #800000;
-            display: none;
-            margin-top: 20px;
-        }
         .extra-image2 {
             position: fixed;
             top: 10px;
@@ -90,8 +84,9 @@
 
     <div id="meerkatContent">
         <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="showMeerkat2()">
-        <img id="meerkatImage2" src="meerkat2.png" alt="Meerkat Image 2" style="display:none; max-width: 150px; height: auto;">
+        <img id="meerkatImage2" src="meerkat2.png" alt="Meerkat Image 2" style="display:none; max-width: 200px; height: auto;">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
+        <p id="meerkatMessage2" class="meerkat-message2">Wanna laugh?</p>
     </div>
 
     <div class="content" id="sharkContent" style="display: none;">
@@ -202,10 +197,14 @@
 
         function showMeerkat2() {
             var meerkatImage = document.getElementById('meerkatImage');
+            var meerkatMessage = document.getElementById('meerkatMessage');
             var meerkatImage2 = document.getElementById('meerkatImage2');
+             var meerkatMessage2 = document.getElementById('meerkatMessage2');
 
             meerkatImage.style.display = "none"; // Hide meerkat1
             meerkatImage2.style.display = "block"; // Show meerkat2
+            meerkatMessage.style.display = "none";
+            meerkatMessage2.style.display = "block";
         }
 
         function showSharkImage2() {
