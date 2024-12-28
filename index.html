@@ -87,7 +87,8 @@
         <p id="message">Merry Christmas, I love you so much, thank you for being in my life.</p>
     </div>
     <div id="meerkatContent">
-        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 200px; height: auto;" onclick="changeMeerkatImage()"> <!-- Changed to 200px -->
+        <img id="meerkatImage" src="meerkat1.png" alt="Meerkat Image" style="max-width: 150px; height: auto;" onclick="showMeerkatImage2()"> 
+        <img id="meerkatImage2" src="meerkat2.png" alt="Meerkat Image2" style="max-width: 200px; height: auto;" onclick="showMeerkatImage3()">
         <p id="meerkatMessage" class="meerkat-message">You look adorable, almost like me.</p>
         <p id="meerkatMessage2" class="meerkat-message" style="display: none;">Wanna laugh?</p> <!-- Added the second message here -->
     </div>
@@ -197,20 +198,12 @@
             meerkatContent.style.display = "flex"; // Ensure meerkatContent is displayed 
         }
 
-        function changeMeerkatImage() {
+        function showMeerkatImage2() {
             var meerkatImage = document.getElementById('meerkatImage');
-            if (meerkatImage.src.match("meerkat1.png")) {
-                meerkatImage.src = "meerkat2.png"; // Change to meerkat2.png
-                document.getElementById('meerkatMessage').style.display = "none"; // Hide first meerkat message
-                document.getElementById('meerkatMessage2').style.display = "block"; // Show meerkat message 2
-            } else if (meerkatImage.src.match("meerkat2.png")) { // New condition for meerkat2.png
-                meerkatImage.src = "meerkat3.png"; // Change to meerkat3.png
-                document.getElementById('meerkatMessage2').style.display = "none"; // Hide meerkat message 2
-            } else {
-                meerkatImage.src = "meerkat1.png"; // Change back to meerkat1.png (optional)
-                document.getElementById('meerkatMessage').style.display = "block"; // Show first meerkat message
-                document.getElementById('meerkatMessage2').style.display = "none"; // Hide meerkat message 2
-            }
+            var meerkatImage2 = document.getElementById('meerkatImage2');
+            
+            meerkatImage.style.display = "none";
+            meerkatImage2.style.display = "block";
         }
 
         function showSharkImage2() {
